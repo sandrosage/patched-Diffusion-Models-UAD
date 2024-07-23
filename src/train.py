@@ -17,6 +17,7 @@ import torch
 from src.utils import utils
 from pytorch_lightning.loggers import LightningLoggerBase
 import pickle
+import csv
 
 os.environ['NUMEXPR_MAX_THREADS'] = '16'
 warnings.filterwarnings(
@@ -28,6 +29,7 @@ log = utils.get_logger(__name__) # init logger
 
 @hydra.main(config_path='configs', config_name='config') # Hydra decorator
 def train(cfg: DictConfig) -> Optional[float]: 
+    wandb.login(key="c210746318a0cf3a3fb1d542db1864e0a789e94c")
     results = {}
 
     # base names for logging
@@ -205,6 +207,10 @@ def train(cfg: DictConfig) -> Optional[float]:
             if cfg.get('pickle_preds',True):
                 with open(os.path.join(trainer.log_dir,f'{fold+1}_preds_dict.pkl'),'wb') as f:
                     pickle.dump(preds_dict,f)
+                with open(os.path.join(trainer.log_dir,f'{fold+1}_preds_dict.csv'),'w', newline='') as csv_file:
+                    writer = csv.writer(csv_file)
+                    for key, value in preds_dict.items():
+                        writer.writerow([key, value])
 
 
 

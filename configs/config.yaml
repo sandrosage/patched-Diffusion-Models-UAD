@@ -4,7 +4,7 @@
 defaults:
   - _self_
   - trainer: default.yaml
-  - model: DDPM_2D.yaml
+  - model: DDPM_2D_patched.yaml
   - datamodule: IXI.yaml
   - callbacks: 
     - checkpoint.yaml # set this to null if you don't want to use callbacks
@@ -13,7 +13,7 @@ defaults:
   - logger: # set logger here or use command line (e.g. `python run.py logger=wandb`)
     - wandb
     - csv 
-  - experiment: DDPM.yaml # set experiment here or use command line (e.g. `python run.py experiment=DDPM`) 
+  - experiment: MIDL23_DDPM/DDPM_patched.yaml # set experiment here or use command line (e.g. `python run.py experiment=DDPM`) 
   - mode: default.yaml
 
   # enable color logging
@@ -46,9 +46,11 @@ ignore_warnings: False
 # lightning chooses best model based on metric specified in checkpoint callback
 test_after_training: True
 
+#onlyEval: False
 onlyEval: False
 new_wandb_run: False # if we want to reevaluate to a new wandb run 
 checkpoint: 'best' # which checkpoints to load
 
 
+#load_checkpoint: '../DDPM_patched_2D_IXI_DDPM_2D_patched__2024-06-27_09-10-54/' # path to checkpoint to load
 load_checkpoint: path_to_ckpt # path to checkpoint to load

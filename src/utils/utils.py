@@ -143,6 +143,7 @@ def log_hyperparameters(
         p.numel() for p in model.parameters() if not p.requires_grad
     )
     hparams['run_id'] = trainer.logger.experiment[0].id
+
     # send hparams to all loggers
     trainer.logger.log_hyperparams(hparams)
 
@@ -188,6 +189,7 @@ def get_yaml(path): # read yaml
 def get_checkpoint(cfg, path): 
     checkpoint_path = path
     checkpoint_to_load = cfg.get("checkpoint",'last') # default to last.ckpt 
+    print(os.getcwd())
     all_checkpoints = os.listdir(checkpoint_path + '/checkpoints')
     hparams = get_yaml(path+'/csv//hparams.yaml')
     wandbID = hparams['run_id']

@@ -91,9 +91,11 @@ class DDPM_2D(LightningModule):
             bbox = self.boxes.sample_single_box(input)
 
         # generate noise
-        if self.cfg.get('noisetype') is not None:
+        if self.cfg.get('noisetype') == "simplex":
+            print("Train: Simplex noise activated")
             noise = gen_noise(self.cfg, input.shape).to(self.device)
         else: 
+            print("Train: Gaussian noise activated")
             noise = None
         # reconstruct
         loss, reco = self.diffusion(input, box=bbox,noise=noise)
@@ -115,9 +117,11 @@ class DDPM_2D(LightningModule):
             bbox = self.boxes.sample_single_box(input)
 
         # generate noise
-        if self.cfg.get('noisetype') is not None:
+        if self.cfg.get('noisetype') == "simplex":
+            print("Val: Simplex noise activated")
             noise = gen_noise(self.cfg, input.shape).to(self.device)
         else: 
+            print("Val: Gaussian Noise activated")
             noise = None
 
         loss, reco = self.diffusion(input, box=bbox, noise=noise)
@@ -176,9 +180,10 @@ class DDPM_2D(LightningModule):
 
         
         # generate noise
-        if self.cfg.get('noisetype') is not None:
+        if self.cfg.get('noisetype') == "simplex":
             noise = gen_noise(self.cfg, input.shape).to(self.device)
         else: 
+            print("Test: Gaussian noise activated")
             noise = None
 
 

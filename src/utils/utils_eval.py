@@ -12,6 +12,7 @@ import wandb
 import monai
 from torch.nn import functional as F
 from PIL import Image
+import csv
 
 import matplotlib.colors as colors
 
@@ -287,6 +288,11 @@ def _test_end(self) :
                 self.eval_dict['t_1p'] = self.threshholds_healthy['thresh_1p']
                 self.eval_dict['t_5p'] = self.threshholds_healthy['thresh_5p']
                 self.eval_dict['t_10p'] = self.threshholds_healthy['thresh_10p']
+
+        with open('.csv', 'w', newline='') as csv_file:
+            writer = csv.writer(csv_file)
+            for key, value in self.eval_dict.items():
+                writer.writerow([key, value])
 def calc_thresh(dataset):
     data = dataset['Datamodules_train.Chexpert']
     _, fpr_healthy_comb, _, threshs_healthy_comb = compute_roc(np.array(data['AnomalyScoreCombPerVol']),np.array(data['labelPerVol'])) 
@@ -588,12 +594,16 @@ def log_images(self, diff_volume, data_orig, data_seg, data_mask, final_volume, 
         fig.subplots_adjust(wspace=0.0)
         # orig
         ax[0].imshow(data_orig.squeeze()[...,j].rot90(3),'gray')
+        ax[0].set_title("Original")
         # reconstructed
         ax[1].imshow(final_volume[...,j].rot90(3).squeeze(),'gray')
+        ax[1].set_title("Reconstructed")
         # difference
         ax[2].imshow(diff_volume.squeeze()[:,...,j].rot90(3),'inferno',norm=colors.Normalize(vmin=0, vmax=diff_volume.max()+.01))
+        ax[2].set_title("Difference")
         # mask
         ax[3].imshow(data_seg.squeeze()[...,j].rot90(3),'gray')
+        ax[3].set_title("Segmentation mask")
         
         # remove all the ticks (both axes), and tick labels
         for axes in ax:

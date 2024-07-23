@@ -16,3 +16,7 @@ wandb/
 # pc_environment.env
 outputlog*
 errorlog*
+
+# user defined
+Data/Test/
+Data/Train/

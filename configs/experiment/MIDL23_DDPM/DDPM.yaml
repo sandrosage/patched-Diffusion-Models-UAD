@@ -27,7 +27,7 @@ model:
 num_folds: 1
 logger:
   wandb:
-    project: MIDL23_DDPM
+    project: AdvML_for_AD
 
 ckpt_path: best 
 

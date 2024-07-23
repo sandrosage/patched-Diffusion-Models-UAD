@@ -1,0 +1,60 @@
+IXI----------------- 
+/home/saturn/iwai/iwai113h/IXI/t2: 578
+MSLUB--------------- 
+/home/saturn/iwai/iwai113h/MSLUB/t2: 30
+/home/saturn/iwai/iwai113h/MSLUB/seg: 30
+BraTS21--------------
+/home/saturn/iwai/iwai113h/BraTS21/t2: 1251
+/home/saturn/iwai/iwai113h/BraTS21/seg: 1251
+v1resampled-------------
+/home/saturn/iwai/iwai113h/v1resampled/IXI/t2: 578
+/home/saturn/iwai/iwai113h/v1resampled/MSLUB/t2: 30
+v2skullstripped-------------
+/home/saturn/iwai/iwai113h/v2skullstripped/Brats21/seg: 1251
+/home/saturn/iwai/iwai113h/v2skullstripped/Brats21/t2: 1251
+/home/saturn/iwai/iwai113h/v2skullstripped/Brats21/mask: 1251
+/home/saturn/iwai/iwai113h/v2skullstripped/IXI/t2: 578
+/home/saturn/iwai/iwai113h/v2skullstripped/IXI/mask: 578
+/home/saturn/iwai/iwai113h/v2skullstripped/MSLUB/seg: 30
+/home/saturn/iwai/iwai113h/v2skullstripped/MSLUB/t2: 30
+/home/saturn/iwai/iwai113h/v2skullstripped/MSLUB/mask: 30
+v3registered_non_iso-------------
+/home/saturn/iwai/iwai113h/v3registered_non_iso/Brats21/seg: 1251
+/home/saturn/iwai/iwai113h/v3registered_non_iso/Brats21/t2: 1251
+/home/saturn/iwai/iwai113h/v3registered_non_iso/Brats21/mask: 1251
+/home/saturn/iwai/iwai113h/v3registered_non_iso/IXI/t2: 578
+/home/saturn/iwai/iwai113h/v3registered_non_iso/IXI/mask: 578
+/home/saturn/iwai/iwai113h/v3registered_non_iso/MSLUB/seg: 30
+/home/saturn/iwai/iwai113h/v3registered_non_iso/MSLUB/t2: 30
+/home/saturn/iwai/iwai113h/v3registered_non_iso/MSLUB/mask: 30
+v3registered_non_iso_cut-------------
+/home/saturn/iwai/iwai113h/v3registered_non_iso_cut/Brats21/seg: 1251
+/home/saturn/iwai/iwai113h/v3registered_non_iso_cut/Brats21/t2: 1251
+/home/saturn/iwai/iwai113h/v3registered_non_iso_cut/Brats21/mask: 1251
+/home/saturn/iwai/iwai113h/v3registered_non_iso_cut/IXI/seg: 0
+/home/saturn/iwai/iwai113h/v3registered_non_iso_cut/IXI/t2: 578
+/home/saturn/iwai/iwai113h/v3registered_non_iso_cut/IXI/mask: 578
+/home/saturn/iwai/iwai113h/v3registered_non_iso_cut/MSLUB/seg: 30
+/home/saturn/iwai/iwai113h/v3registered_non_iso_cut/MSLUB/t2: 30
+/home/saturn/iwai/iwai113h/v3registered_non_iso_cut/MSLUB/mask: 30
+v4correctedN4_non_iso_cut-------------
+/home/saturn/iwai/iwai113h/v4correctedN4_non_iso_cut/Brats21/seg: 1251
+/home/saturn/iwai/iwai113h/v4correctedN4_non_iso_cut/Brats21/t2: 1251
+/home/saturn/iwai/iwai113h/v4correctedN4_non_iso_cut/Brats21/mask: 1251
+/home/saturn/iwai/iwai113h/v4correctedN4_non_iso_cut/IXI/t2: 578
+/home/saturn/iwai/iwai113h/v4correctedN4_non_iso_cut/IXI/mask: 578
+/home/saturn/iwai/iwai113h/v4correctedN4_non_iso_cut/MSLUB/seg: 30
+/home/saturn/iwai/iwai113h/v4correctedN4_non_iso_cut/MSLUB/t2: 30
+/home/saturn/iwai/iwai113h/v4correctedN4_non_iso_cut/MSLUB/mask: 30
+Data-------------
+Data/Train/ixi: 2
+Data/Train/ixi/t2: 577
+Data/Train/ixi/mask: 581
+Data/Test/MSLUB: 3
+Data/Test/MSLUB/t2: 30
+Data/Test/MSLUB/mask: 30
+Data/Test/MSLUB/seg: 30
+Data/Test/Brats21: 3
+Data/Test/Brats21/t2: 1251
+Data/Test/Brats21/mask: 1251
+Data/Test/Brats21/seg: 1251
