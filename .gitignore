@@ -20,3 +20,4 @@ errorlog*
 # user defined
 Data/Test/
 Data/Train/
+Data/new.txt
